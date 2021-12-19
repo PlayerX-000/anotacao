@@ -1,0 +1,51 @@
+<%- include('front-end/include_fixo/include_html/head.ejs')%>
+</head>
+<body>
+<%- include('front-end/include_fixo/include_html/componente/header.ejs')%>
+
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  
+
+<script type="text/javascript" src="/js/excluir.js"></script>
+<script type="text/javascript" src="/js/add.js"></script>
+
+<h1>Notas</h1>
+<hr class="hr">
+
+<section>
+    <div id="append" class="agrupar">
+<% if (dados.length > 0){ %>
+    <% for (let inf of dados){ %>
+
+    <div id="<%= inf.id %>" class="primeira_secao">
+        <nav class="navagrup">
+<input type="text" value= "ID: <%= inf.id %>" disabled>
+<input type="text" value=<%= inf.titulo %>>
+<textarea type="text"><%= inf.texto %></textarea>
+</nav>
+<nav id="<%= inf.id %>">
+<button class="excluirdados">excluir</button>
+<button class="abrirdados">abrir</button>
+   </nav>
+ </div>
+
+<% }} %>
+</div>
+</section>
+
+<h3>Criar Notas</h3>
+
+<hr class="hr">
+
+<section>
+    <div class="agrupar">
+    <div class="primeira_secao">
+<input id="titulo" type="text" >
+<textarea id="texto" type="text" ></textarea>
+<button id="adddados">adicionar</button>
+    </div>
+</div>
+</section>
+<%- include('front-end/include_fixo/include_html/componente/footer.ejs')%>
+<%- include('front-end/include_fixo/include_html/fim_page.ejs')%>
