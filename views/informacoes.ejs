@@ -2,22 +2,23 @@
 </head>
 <body>
 <%- include('front-end/include_fixo/include_html/componente/header.ejs')%>
-
+<main>
 <h1>Informações</h1>
-<section class="alinhamento_vertical_central">
+<section class="alinhamento_vertical_central borda_div">
     <% if (dados.length > 0){ %>
-<label for=""><%= dados[0] %></label>
-<label for=""><%= dados[1] %></label>
-<label for=""><%= dados[2] %></label>
-<label for=""><%= dados[3] %></label>
-<label for=""><%= dados[4] %></label>
-<label for=""><%= dados[5] %></label>
-<label for=""><%= dados[6] %></label>
-<label for=""><%= dados[7] %></label>
-<label for=""><%= dados[8] %></label>
-<label for=""><%= dados[9] %></label>
-<label for=""><%= dados[10] %></label>
+<label class="label_inf" for=""><%= dados[0] %></label>
+<label class="label_inf" for=""><%= dados[1] %></label>
+<label class="label_inf" for=""><%= dados[2] %></label>
+<label class="label_inf" for=""><%= dados[3] %></label>
+<label class="label_inf" for=""><%= dados[4] %></label>
+<label class="label_inf" for=""><%= dados[5] %></label>
+<label class="label_inf" for=""><%= dados[6] %></label>
+<label class="label_inf" for=""><%= dados[7] %></label>
+<label class="label_inf" for=""><%= dados[8] %></label>
+<label class="label_inf" for=""><%= dados[9] %></label>
+<label class="label_inf" for=""><%= dados[10] %></label>
     <% } %>
 </section>
+</main>
 <%- include('front-end/include_fixo/include_html/componente/footer.ejs')%>
 <%- include('front-end/include_fixo/include_html/fim_page.ejs')%>

@@ -11,7 +11,14 @@ exports.exibe_notas = (async (req, res)=>{
 
 
 
-
+exports.atualiza = (async (req, res)=>{
+   let id = req.body.id
+   let titulo = req.body.titulo
+   let texto = req.body.texto
+   
+   const usuarios = await contrl_dados.update_nota(id, titulo, texto)
+   return res.status(200).send(usuarios) 
+})
 
 
 
@@ -63,3 +70,19 @@ exports.adiciona_dados = async(req, res)=>{
   })
 }
 
+
+exports.edit = async(req, res)=>{
+   let titulo = req.body.titulo;
+   let texto = req.body.texto;
+   let id = req.body.id;
+
+let conteudo = {
+   titulo:titulo,
+   texto:texto,
+   id:id
+}
+
+   res.render("editanotas.ejs",{
+      texto: conteudo
+      });
+}

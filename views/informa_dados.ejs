@@ -10,8 +10,10 @@
 <script type="text/javascript" src="/js/excluir.js"></script>
 <script type="text/javascript" src="/js/add.js"></script>
 
-<h1>Notas</h1>
+<h1>Crie e Edite Suas Notas</h1>
+
 <hr class="hr">
+<h2>Notas</h2>
 
 <section>
     <div id="append" class="agrupar">
@@ -20,32 +22,35 @@
 
     <div id="<%= inf.id %>" class="primeira_secao">
         <nav class="navagrup">
-<input type="text" value= "ID: <%= inf.id %>" disabled>
-<input type="text" value=<%= inf.titulo %>>
-<textarea type="text"><%= inf.texto %></textarea>
-</nav>
+            <form action="/user/adiciona/notas/editar" method="post">
+<input name="id" type="text" value="<%= inf.id %>" disabled>
+<input type="hidden" name="id" type="text" value="<%= inf.id %>" >
+<input name="titulo" id="titulo" type="text" value=<%= inf.titulo %>>
+<textarea name="texto" id="texto" type="text"><%= inf.texto %></textarea>
+<button class="abrirdados">abrir</button>  
+</form>
 <nav id="<%= inf.id %>">
 <button class="excluirdados">excluir</button>
-<button class="abrirdados">abrir</button>
-   </nav>
- </div>
+</nav>
+</nav>
+</div>
 
 <% }} %>
 </div>
 </section>
 
-<h3>Criar Notas</h3>
-
 <hr class="hr">
+<h2>Criar Notas</h2>
 
 <section>
     <div class="agrupar">
     <div class="primeira_secao">
-<input id="titulo" type="text" >
-<textarea id="texto" type="text" ></textarea>
+<input id="tituloadd" type="text" >
+<textarea id="textoadd" type="text" ></textarea>
 <button id="adddados">adicionar</button>
     </div>
 </div>
 </section>
+
 <%- include('front-end/include_fixo/include_html/componente/footer.ejs')%>
 <%- include('front-end/include_fixo/include_html/fim_page.ejs')%>

@@ -1,15 +1,22 @@
 $(document).ready(function()
 {
 
-    $('#adddados').click(()=>{
-      pega_dados()
-})
+$('#adddados').click(()=>{
+  pega_dados(0)
 })
 
-function pega_dados(){
-  const titulo = document.getElementById("titulo").value
-  const texto = document.getElementById("texto").value
-  leis(titulo , texto)
+
+})
+
+function pega_dados(cod){
+ 
+  console.log(cod)
+  const titulo = document.getElementById("tituloadd").value
+  const texto = document.getElementById("textoadd").value
+
+  if(cod==0){
+    leis(titulo , texto);
+  }
 }
 
 
@@ -17,6 +24,7 @@ function pega_dados(){
 
 
 function leis(titulo_t , texto_t){
+ 
   const  titulo = titulo_t.trim()
   const  texto = texto_t.trim()
 
@@ -35,6 +43,7 @@ if((titulo.length>=min_titulo_length && titulo.length<=max_titulo_length) && (te
 
 
 function env_pedido_para_adicionar(titulo , texto){
+
 const titulovar = titulo;
 const textovar = texto;
 

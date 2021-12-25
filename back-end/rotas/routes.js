@@ -15,15 +15,16 @@ router.get("/sistema/dados/servidor/banco_de_dados/notcss", contrl_dados.exibe_d
 
 /***************************************/
 
+
+/**************** POST *****************/
+
 router.post("/user/deleta/notas", contrl_dados.deleta_dados)
 
 router.post("/user/adiciona/notas", contrl_dados.adiciona_dados)
 
+router.post("/user/adiciona/notas/editar", contrl_dados.edit)
 
-
-/**************** POST *****************/
-
-
+router.post("/user/adiciona/notas/update", contrl_dados.atualiza)
 
 /***************************************/
 /************* EXPORTSS ****************/

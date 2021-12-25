@@ -1,10 +1,27 @@
 <%- include('front-end/include_fixo/include_html/head.ejs')%>
+<link rel="stylesheet" href="/css/editnotas/editar_notas.css">
 </head>
 <body>
 <%- include('front-end/include_fixo/include_html/componente/header.ejs')%>
-<h1>Titulo</h1>
-<h2>subtitulo</h2>
-<h3>TEXTO H3 Texto h3 texto h3</h3>
-<p>Paragrafo PARAGRAFO paragrafo PaRaGrAfO</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/acoes_botoes.js"></script>
+<script type="text/javascript" src="/js/edita_elementos.js"></script>
+<main>
+<section>
+<h3>Titulo</h3>
+<input id="titulo" maxlength="40" type="text" value=<%= texto.titulo %>>
+<div style="width: 100%;">
+<label for="conteudo"><h3>Texto</h3></label>
+<textarea name="conteudo" id="conteudo" maxlength="400" onkeydown="autoResize(this)" type="text"><%= texto.texto %></textarea>
+</div>
+<div id="<%= texto.id %>">
+<button class="excluirdadosedit">excluir</button>
+<button class="alteradadosedit">salvar</button>
+<button class="fechadadosedit">voltar</button>
+</div>
+</section>
+</main>
 <%- include('front-end/include_fixo/include_html/componente/footer.ejs')%>
 <%- include('front-end/include_fixo/include_html/fim_page.ejs')%>

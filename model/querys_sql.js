@@ -22,6 +22,15 @@ const add_nota = async (titulo , texto)=>{
     return linhas
 }
 
+const update_nota = async (id, titulo, texto)=>{
+    const con = await conexao.conectar();
+    const [linhas] = await con[0].query(`
+    UPDATE notas
+    SET titulo = '${titulo}', texto = '${texto}'
+    WHERE id=${id};
+    `);
+    return linhas
+}
 
 
 
@@ -49,4 +58,4 @@ return dados
 
 
 
-module.exports = { todosUsuarios , inf , deleta_nota , add_nota}
+module.exports = { todosUsuarios , inf , deleta_nota , add_nota , update_nota}
