@@ -1,22 +1,17 @@
-section {
-    display: flex;
-    width: 70%;
-    margin-top: 20%;
-    height: auto;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-}
 
 
-div {
-    width: 100%;
-    height: max-content;
-    text-align: center;
-}
-
-section {
+.article {
     width: calc(100% - 20%);
+}
+
+input#titulo {
+ width: calc(100% - 50%);
+ text-align: center;
+}
+
+
+
+textarea {
+    width: calc(100% - 10%);
+    text-align: left;
 }

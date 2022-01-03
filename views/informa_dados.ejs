@@ -1,4 +1,5 @@
 <%- include('front-end/include_fixo/include_html/head.ejs')%>
+<link rel="stylesheet" href="/css/footer/footer.css">
 </head>
 <body>
 <%- include('front-end/include_fixo/include_html/componente/header.ejs')%>
@@ -10,6 +11,8 @@
 <script type="text/javascript" src="/js/excluir.js"></script>
 <script type="text/javascript" src="/js/add.js"></script>
 
+<main>
+<article class="centraliza_v">
 <h1>Crie e Edite Suas Notas</h1>
 
 <hr class="hr">
@@ -21,36 +24,63 @@
     <% for (let inf of dados){ %>
 
     <div id="<%= inf.id %>" class="primeira_secao">
-        <nav class="navagrup">
-            <form action="/user/adiciona/notas/editar" method="post">
-<input name="id" type="text" value="<%= inf.id %>" disabled>
+        <div class="navagrup width-max">
+            <form class="form" action="/user/adiciona/notas/editar" method="post">
+
+<input class="width-max" name="id" type="text" value="<%= inf.id %>" disabled>
 <input type="hidden" name="id" type="text" value="<%= inf.id %>" >
-<input name="titulo" id="titulo" type="text" value=<%= inf.titulo %>>
-<textarea name="texto" id="texto" type="text"><%= inf.texto %></textarea>
+<input class="width-max" name="titulo" id="titulo" type="text" value=<%= inf.titulo %>>
+<textarea class="width-max" name="texto" id="texto" type="text"><%= inf.texto %></textarea>
+
 <button class="abrirdados">abrir</button>  
+
 </form>
-<nav id="<%= inf.id %>">
+<div id="<%= inf.id %>">
 <button class="excluirdados">excluir</button>
-</nav>
-</nav>
+</div>
+</div>
 </div>
 
 <% }} %>
 </div>
 </section>
 
+
+
+
+
+
+
 <hr class="hr">
 <h2>Criar Notas</h2>
 
 <section>
+
+
     <div class="agrupar">
     <div class="primeira_secao">
-<input id="tituloadd" type="text" >
-<textarea id="textoadd" type="text" ></textarea>
+    <div class="form">
+
+<input class="width-max" id="tituloadd" type="text" >
+<textarea class="width-max" id="textoadd" type="text" ></textarea>
 <button id="adddados">adicionar</button>
+
     </div>
-</div>
+    </div>
+    </div>
+
+
+
+
+
+
+
 </section>
 
+
+
+
+</article>
+</main>
 <%- include('front-end/include_fixo/include_html/componente/footer.ejs')%>
 <%- include('front-end/include_fixo/include_html/fim_page.ejs')%>

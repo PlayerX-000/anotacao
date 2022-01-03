@@ -1,5 +1,6 @@
 <%- include('front-end/include_fixo/include_html/head.ejs')%>
 <link rel="stylesheet" href="/css/editnotas/editar_notas.css">
+<link rel="stylesheet" href="/css/footer/footer.css">
 </head>
 <body>
 <%- include('front-end/include_fixo/include_html/componente/header.ejs')%>
@@ -7,12 +8,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script type="text/javascript" src="/js/acoes_botoes.js"></script>
-<script type="text/javascript" src="/js/edita_elementos.js"></script>
+
 <main>
-<section>
+<article class="article centraliza_v">
 <h3>Titulo</h3>
 <input id="titulo" maxlength="40" type="text" value=<%= texto.titulo %>>
-<div style="width: 100%;">
+<div class="centraliza_v width-max">
 <label for="conteudo"><h3>Texto</h3></label>
 <textarea name="conteudo" id="conteudo" maxlength="400" onkeydown="autoResize(this)" type="text"><%= texto.texto %></textarea>
 </div>
@@ -21,7 +22,8 @@
 <button class="alteradadosedit">salvar</button>
 <button class="fechadadosedit">voltar</button>
 </div>
-</section>
+</articles>
 </main>
+<script type="text/javascript" src="/js/edita_elementos.js"></script>
 <%- include('front-end/include_fixo/include_html/componente/footer.ejs')%>
 <%- include('front-end/include_fixo/include_html/fim_page.ejs')%>

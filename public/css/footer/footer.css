@@ -1,0 +1,10 @@
+.divisao {
+    width: 50%;
+    height: max-content;
+}
+
+li {
+    list-style-type: none;
+    margin: 1%;
+  }
+  
